@@ -8,16 +8,16 @@ $error=$_GET['erro'];
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registrar-se com Nutricionista</title>
+	<title>Registro do nutricionista</title>
 </head>
 <body>
-	<form method="POST" action="../php/nutriBack.php">
-		<label>Nome:<input type="text" name="name" placeholder="Nome"></label>
-		<label>CPF:<input type="text" name="cpf" placeholder="000.000.000-00" maxlength="11"></label>
-		<label>E-mail:<input type="text" name="email" placeholder="example@email.com"></label>
-		<label>Registro:<input type="text" name="register" placeholder="Nº de Registro"></label>
-		<label>Senha:<input type="password" name="password" placeholder="Senha"></label>
-		<label>Confirmar Senha:<input type="password" name="confirmPW" placeholder="Confirmar Senha"></label>
+	<form method="POST" action="../php/nutriRegister.php">
+		<label>Nome:<input type="text" name="name" placeholder="Nome" minlength=3 maxlength=45></label>
+		<label>E-mail:<input type="email" name="email" placeholder="example@email.com"></label>
+		<label>CPF:<input type="text" name="cpf" placeholder="000.000.000-00" minlength=11 maxlength=11></label>
+		<label>CRN:<input type="text" name="regNum" placeholder="Nº de Registro" minlength=4 maxlength=4></label>
+		<label>Senha:<input type="password" name="password" placeholder="Senha" minlength=8></label>
+		<label>Confirmar Senha:<input type="password" name="confirmPW" placeholder="Confirmar Senha" minlength=8></label>
 		<input type="submit" name="Confirmar">
 	</form>
 </body>
