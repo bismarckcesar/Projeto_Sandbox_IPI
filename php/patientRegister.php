@@ -5,8 +5,9 @@ $name = $_POST['name'];
 $cpf = $_POST['cpf'];
 $email = $_POST['email'];
 $date = $_POST['date'];
-$wheigth = floatval(trim(str_replace(',', '.', $_POST['wheigth'])));
-$heigth = floatval(trim(str_replace(',', '.', $_POST['heigth'])));
+$weight = floatval(trim(str_replace(',', '.', $_POST['weight'])));
+$height = floatval(trim(str_replace(',', '.', $_POST['height'])));
+$objective = $_POST['objective'];
 $password = trim(sha1($_POST['password']));
 $confirmPW = trim(sha1($_POST['confirmPW']));
 
@@ -35,8 +36,8 @@ exit();
 
 }
 	
-$stmt = $con->prepare('INSERT INTO PATIENTS(CPF, NAME, PASSWORD, EMAIL) VALUES (?, ?, ?, ?)');
-$stmt->execute([$cpf, $name, $date, $wheigth, $heigth, $password, $email]);
+$stmt = $con->prepare('INSERT INTO PATIENTS(CPF, NAME, DATE_BIRTH, WEIGHT, HEIGHT, OBJECTIVE, PASSWORD, EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+$stmt->execute([$cpf, $name, $date, $weight, $height, $objective, $password, $email]);
 
 header('location: ../forms/patientForm.php?erro=Paciente cadastrado com sucesso!');
 exit();
