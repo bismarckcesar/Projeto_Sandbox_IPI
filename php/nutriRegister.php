@@ -8,12 +8,12 @@ $regNum = $_POST['regNum'];
 $password = trim(sha1($_POST['password']));
 $confirmPW = trim(sha1($_POST['confirmPW']));
 
-$stmt = $con->prepare("SELECT `EMAIL`, `CPF`, `REGISTER_NUMBER` FROM `NUTRITIONISTS` WHERE `CPF`=?");
-$stmt->execute([$cpf]);
+$stmt = $con->prepare("SELECT `EMAIL`, `CPF`, `REGISTER_NUMBER` FROM `NUTRITIONISTS` WHERE (`CPF`=? OR `EMAIL`=? OR `REGISTER_NUMBER`=?)");
+$stmt->execute([$cpf, $email, $regNum]);
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$stmt2 = $con->prepare("SELECT `CPF` FROM `PATIENTS` WHERE `CPF`=?");
-$stmt2->execute([$cpf]);
+$stmt = $con->prepare("SELECT `EMAIL`, `CPF` FROM `PATIENTS` WHERE (`CPF`=? OR `EMAIL`=?)");
+$stmt->execute([$cpf, $email]);
 $result2 = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ( $password != $confirmPW) {
@@ -21,28 +21,23 @@ if ( $password != $confirmPW) {
   header('location: ../forms/nutriForm.php?erro=As senhas não coincidem');
   exit();
   
-  }else if($result2['CPF'] == $cpf ){
+  }else if($result['EMAIL'] == $email || $result2['EMAIL']){
 
-    header('location: ../forms/nutriForm.php?erro=Usuário cadastrado como um paciente');
-    exit();
-    
-  }else if($result['EMAIL'] == $email){
-
-      header('location: ../forms/nutriForm.php?erro=Email indisponivel');  
+      header('location: ../forms/nutriForm.php?erro=E-mail ou CPF já cadastrado');  
       exit();
 
-    }  else if ($result['CPF'] == $cpf) {
+    }  else if ($result['CPF'] == $cpf || $result2['CPF']) {
         
-header('location: ../forms/nutriForm.php?erro=CPF inválido');
+header('location: ../forms/nutriForm.php?erro=E-mail ou CPF já cadastrado');
 exit();
 
-} elseif ($result['REGISTER_NUMBER'] == $regNum ) {
+} else if ($result['REGISTER_NUMBER'] == $regNum ) {
 
 header('location: ../forms/nutriForm.php?erro=CRN inválida');
 exit();
 }
 	
-	$stmt = $con->prepare('INSERT INTO NUTRITIONISTS(CPF, NAME, REGISTER_NUMBER, EMAIL, PASSWORD) VALUES(?, ?, ?, ?, ?)');
+$stmt = $con->prepare('INSERT INTO NUTRITIONISTS(CPF, NAME, REGISTER_NUMBER, EMAIL, PASSWORD) VALUES(?, ?, ?, ?, ?)');
 $stmt->execute([$cpf, $name, $regNum, $email, $password]);
 
 header('location: ../forms/nutriForm.php?erro=Nutricionista cadastrado com sucesso!');

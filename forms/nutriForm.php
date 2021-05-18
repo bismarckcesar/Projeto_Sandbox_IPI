@@ -1,15 +1,13 @@
-<?php 
-
-$error=$_GET['erro'];
-
- ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Registro do nutricionista</title>
 </head>
+<?php 
+
+$error=$_GET['erro'];
+
+ ?>
 <body>
 	<form method="POST" action="../php/nutriRegister.php">
 		<label>Nome:<input type="text" name="name" placeholder="Nome" minlength=3 maxlength=45></label>
