@@ -9,7 +9,7 @@ $error=$_GET['erro'];
 
  ?>
 <body>
-<form method="POST" action="../php/patientRegister.php">
+<form method="POST" action="../actions/patientRegister.php">
 		<label>Nome:<input type="text" name="name" placeholder="Nome" minlength=3 maxlength=45></label>
 		<label>E-mail:<input type="email" name="email" placeholder="example@email.com"></label>
 		<label>CPF:<input type="text" name="cpf" placeholder="000.000.000-00" minlength=11 maxlength=11></label>

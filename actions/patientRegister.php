@@ -1,5 +1,5 @@
 <?php
-require_once('../conect.php');
+require_once('../model/conect.php');
 
 $name = $_POST['name'];
 $cpf = $_POST['cpf'];
@@ -21,17 +21,17 @@ $result2 = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ( $password != $confirmPW) {
     
-  header('location: ../forms/patientForm.php?erro=As senhas não coincidem');
+  header('location: ../view/patientForm.php?erro=As senhas não coincidem');
   exit();
   
   }else if($result2['EMAIL'] == $email || $result['EMAIL']){
 
-      header('location: ../forms/patientForm.php?erro=E-mail ou CPF já cadastrado');  
+      header('location: ../view/patientForm.php?erro=E-mail ou CPF já cadastrado');  
       exit();
 
     }else if ($result2['CPF'] == $cpf || $result['CPF']) {
         
-header('location: ../forms/patientForm.php?erro=E-mail ou CPF já cadastrado');
+header('location: ../view/patientForm.php?erro=E-mail ou CPF já cadastrado');
 exit();
 
 }
@@ -39,7 +39,7 @@ exit();
 $stmt = $con->prepare('INSERT INTO PATIENTS(CPF, NAME, DATE_BIRTH, WEIGHT, HEIGHT, OBJECTIVE, PASSWORD, EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
 $stmt->execute([$cpf, $name, $date, $weight, $height, $objective, $password, $email]);
 
-header('location: ../forms/patientForm.php?erro=Paciente cadastrado com sucesso!');
+header('location: ../view/patientForm.php?erro=Paciente cadastrado com sucesso!');
 exit();
 
  ?>
