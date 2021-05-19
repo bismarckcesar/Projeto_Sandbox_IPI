@@ -21,12 +21,12 @@ if ( $password != $confirmPW) {
   header('location: ../view/nutriForm.php?erro=As senhas não coincidem');
   exit();
   
-  }else if($result['EMAIL'] == $email || $result2['EMAIL']){
+}else if($result['EMAIL'] == $email || $result2['EMAIL']){
 
-      header('location: ../view/nutriForm.php?erro=E-mail ou CPF já cadastrado');  
-      exit();
+    header('location: ../view/nutriForm.php?erro=E-mail ou CPF já cadastrado');  
+    exit();
 
-    }  else if ($result['CPF'] == $cpf || $result2['CPF']) {
+}  else if ($result['CPF'] == $cpf || $result2['CPF']) {
         
 header('location: ../view/nutriForm.php?erro=E-mail ou CPF já cadastrado');
 exit();

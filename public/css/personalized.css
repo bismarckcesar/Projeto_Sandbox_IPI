@@ -1,0 +1,23 @@
+.btn-style {
+    background-color: #5986af;
+    border: 1px solid black;
+}
+.input-style{
+    border: 1px solid #5986af;
+}
+.link-style{
+    color: #5986af;
+}
+.div-form{
+    width: 40%;
+    height: 40%;
+    border: 5px solid #5986af;
+}
+.header-style{
+    font-size: 30px;
+}
+.back-img{
+    background-image: url(../img/background.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

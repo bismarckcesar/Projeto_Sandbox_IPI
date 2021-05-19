@@ -24,12 +24,12 @@ if ( $password != $confirmPW) {
   header('location: ../view/patientForm.php?erro=As senhas não coincidem');
   exit();
   
-  }else if($result2['EMAIL'] == $email || $result['EMAIL']){
+}else if($result2['EMAIL'] == $email || $result['EMAIL']){
 
-      header('location: ../view/patientForm.php?erro=E-mail ou CPF já cadastrado');  
-      exit();
+    header('location: ../view/patientForm.php?erro=E-mail ou CPF já cadastrado');  
+    exit();
 
-    }else if ($result2['CPF'] == $cpf || $result['CPF']) {
+}else if ($result2['CPF'] == $cpf || $result['CPF']) {
         
 header('location: ../view/patientForm.php?erro=E-mail ou CPF já cadastrado');
 exit();
