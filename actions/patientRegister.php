@@ -37,7 +37,7 @@ exit();
 }
 	
 $stmt = $con->prepare('INSERT INTO PATIENTS(CPF, NAME, DATE_BIRTH, WEIGHT, HEIGHT, OBJECTIVE, PASSWORD, EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
-$sucess = $stmt->execute([$cpf, $name, $date, $weight, $height, $objective, $password, $email]);
+$stmt->execute([$cpf, $name, $date, $weight, $height, $objective, $password, $email]);
 
 header('location: ../view/patientForm.php?error=Paciente cadastrado com sucesso!&validate=success');
 exit();
