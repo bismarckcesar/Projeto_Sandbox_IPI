@@ -18,29 +18,29 @@ $result2 = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ( $password != $confirmPW) {
     
-  header('location: ../view/nutriForm.php?erro=As senhas não coincidem');
+  header("location: ../view/nutriForm.php?error=As senhas não coincidem!&validate=danger");
   exit();
   
 }else if($result['EMAIL'] == $email || $result2['EMAIL']){
 
-    header('location: ../view/nutriForm.php?erro=E-mail ou CPF já cadastrado');  
-    exit();
+  header('location: ../view/nutriForm.php?error=E-mail ou CPF já cadastrado!&validate=danger');  
+  exit();
 
 }  else if ($result['CPF'] == $cpf || $result2['CPF']) {
         
-header('location: ../view/nutriForm.php?erro=E-mail ou CPF já cadastrado');
-exit();
+  header('location: ../view/nutriForm.php?error=E-mail ou CPF já cadastrado!&validate=danger'); 
+  exit();
 
 } else if ($result['REGISTER_NUMBER'] == $regNum ) {
 
-header('location: ../view/nutriForm.php?erro=CRN inválida');
+header('location: ../view/nutriForm.php?error=CRN inválida!&validate=danger');
 exit();
 }
 	
 $stmt = $con->prepare('INSERT INTO NUTRITIONISTS(CPF, NAME, REGISTER_NUMBER, EMAIL, PASSWORD) VALUES(?, ?, ?, ?, ?)');
 $stmt->execute([$cpf, $name, $regNum, $email, $password]);
 
-header('location: ../view/nutriForm.php?erro=Nutricionista cadastrado com sucesso!');
+header('location: ../view/nutriForm.php?error=Nutricionista cadastrado com sucesso!&validate=success');
 exit();
 
  ?>

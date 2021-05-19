@@ -16,7 +16,8 @@
 </head>
 <?php 
 
-$error=$_GET['erro'];
+$error=$_GET['error'];
+$color = $_GET['validate']
 
 ?>
 
@@ -34,8 +35,12 @@ $error=$_GET['erro'];
 
 			    <p>
 			    	Não é nutricionista? <u><a class="link-style" href="patientForm.php">Cadastre-se como paciente</a></u>!
-			      
 			    </p>
+				<?php if(isset($error)):?>
+					<div class="row w-auto mb-4 border border-<?php echo $color?> text-<?php echo $color?>">
+						<span class="text-center"><?php echo $error ?></span>
+			 		</div>
+				<?php endif ?>
 
 			    <!-- Name -->
 			    <input type="text" name="name" class="form-control mb-4 input-style" placeholder="Nome" minlength=3 maxlength=45 required="true">
