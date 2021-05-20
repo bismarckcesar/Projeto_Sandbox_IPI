@@ -15,12 +15,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 </head>
-<?php 
 
-$error = $_GET['error'];
-$color = $_GET['validate']
-
-?>
 <body class="back-img">
 	<main class="text-dark">
 
@@ -38,9 +33,9 @@ $color = $_GET['validate']
 			    <p>
 			    	Não é um paciente? Cadastre-se como <a class="link-style" href="nutriForm.php">nutricionista</a>!
 			    </p>
-				<?php if(isset($error)):?>
-					<div class="row w-auto mb-4 border border-<?php echo $color?> text-<?php echo $color?>">
-						<span class="text-center"><?php echo $error ?></span>
+				<?php if(isset($_GET['message'])):?>
+					<div class="row w-auto mb-4 border border-<?php echo $_GET['validate']?> text-<?php echo $_GET['validate']?>">
+						<span class="text-center"><?php echo $_GET['message'] ?></span>
 			 		</div>
 				<?php endif ?>
 			    <!-- Name -->

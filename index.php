@@ -1,5 +1,6 @@
 <?php 
 
-header('location: view/loginForm.php');
+
+header('location: view/home.php');
 
 ?>

@@ -15,12 +15,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 </head>
-<?php 
 
-$error=$_GET['error'];
-$color = $_GET['validate']
-
-?>
 
 <body class="back-img">
 	<main class="text-dark">
@@ -32,13 +27,13 @@ $color = $_GET['validate']
 		<div class="container bg-white mt-4 mb-4 rounded div-form">
 
 			<!-- Default form subscription -->
-			<form class="text-center border border-light p-5" action="../actions/nutriRegister.php" method="POST">
+			<form class="text-center border border-light p-5" action="../actions/auth.php" method="POST">
 
 			    <p class="h4 mb-4">Login</p>
 
-				<?php if(isset($error)):?>
-					<div class="row w-auto mb-4 border border-<?php echo $color?> text-<?php echo $color?>">
-						<span class="text-center"><?php echo $error ?></span>
+				<?php if(isset($_GET['message'])):?>
+					<div class="row w-auto mb-4 border border-<?php echo $_GET['validate']?> text-<?php echo $_GET['validate']?>">
+						<span class="text-center"><?php echo $_GET['message'] ?></span>
 			 		</div>
 				<?php endif ?>
 
