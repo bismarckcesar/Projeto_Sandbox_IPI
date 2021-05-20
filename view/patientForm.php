@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
 	<title>Registro do paciente</title>
+	<link rel="shortcut icon" href="../public/img/fav-icon.ico" type="image/x-icon">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
@@ -23,7 +24,9 @@ $color = $_GET['validate']
 <body class="back-img">
 	<main class="text-dark">
 
-		<h1 class="text-center mx-5 mt-5 header-style">Quer ser um paciente? Visualize os planos alimentares atribuídos a você, de forma simples na <u><a class="link-style" href="#">Sandbox</a></u>!</h1>
+		<h1 class="text-center mx-5 mt-5 header-style">Quer ser um paciente? Visualize os planos alimentares atribuídos a você, de forma simples na <a class="link-style" href="/">Sandbox</a>!</h1>
+
+		<img src="../public/img/icon.svg" class="rounded mx-auto d-block" alt="Icon for Sandbox System">
 
 		<div class="container bg-white mt-4 mb-4 rounded div-form">
 
@@ -33,7 +36,7 @@ $color = $_GET['validate']
 			    <p class="h4 mb-4">Crie sua conta</p>
 
 			    <p>
-			    	Não é um paciente? <u><a class="link-style" href="nutriForm.php">Cadastre-se como nutricionista</a></u>!
+			    	Não é um paciente? Cadastre-se como <a class="link-style" href="nutriForm.php">nutricionista</a>!
 			    </p>
 				<?php if(isset($error)):?>
 					<div class="row w-auto mb-4 border border-<?php echo $color?> text-<?php echo $color?>">
@@ -70,7 +73,7 @@ $color = $_GET['validate']
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Cadastrar</button>
 
-				<p class="mt-3">Já possui uma conta? Faça <u><a class="link-style" href="loginForm.php">Login</a></u>!</p>
+				<p class="mt-3">Já possui uma conta? Faça <a class="link-style" href="loginForm.php">Login</a>!</p>
 
 			</form>
 			<!-- Default form subscription -->
