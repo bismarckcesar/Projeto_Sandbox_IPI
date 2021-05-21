@@ -5,8 +5,8 @@ $name = $_POST['name'];
 $cpf = $_POST['cpf'];
 $email = $_POST['email'];
 $regNum = $_POST['regNum'];
-$password = trim(sha1($_POST['password']));
-$confirmPW = trim(sha1($_POST['confirmPW']));
+$password = sha1(trim($_POST['password']));
+$confirmPW = sha1(trim($_POST['password']));
 
 $stmt = $con->prepare("SELECT `EMAIL`, `CPF`, `REGISTER_NUMBER` FROM `NUTRITIONISTS` WHERE (`CPF`=? OR `EMAIL`=? OR `REGISTER_NUMBER`=?)");
 $stmt->execute([$cpf, $email, $regNum]);

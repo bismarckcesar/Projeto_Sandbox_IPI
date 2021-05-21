@@ -1,9 +1,5 @@
-<?php
-require_once '../actions/init.php';
-
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,13 +17,17 @@ require_once '../actions/init.php';
     <title>Registro do nutricionista</title>
 
 </head>
+<?php
+
+require_once '../actions/init.php';
+
+?>
 <body>
 <?php if(isset($_SESSION['user'])): ?>
 
 <?= $_SESSION['user'] ?> 
  <a href="../actions/logout.php">Sair</a></div>
-<?php else:  ?>
-<a href="loginForm.php" >Entrar</a>
+<?php else: header("location: loginForm.php")?>
 <?php endif ?>
 </body>
 </html>

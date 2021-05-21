@@ -1,31 +1,33 @@
 <?php
-require_once '../model/conect.php';
-require_once 'init.php';
+require_once('../model/conect.php');
+require_once('init.php');
 
 $email = $_POST['email'];
-$password=sha1($_POST['password']);
+$password=sha1(trim($_POST['password']));
 
 
 $stmt = $con->prepare(" SELECT * FROM `NUTRITIONISTS`  WHERE (`EMAIL` = ? AND `PASSWORD` = ?)");
-$stmt->execute([$email,$password]);
-$usersession = $stmt ->fetchAll();
-if(sizeof($usersession)>0){
-    $user = $usersession[0];
-    $_SESSION['user'] = $user['NAME'];
-    $_SESSION['user_id'] = $user['ID'];
-    header('location: /');
+$stmt->execute([$email, $password]);
+$usersession = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if($usersession){
+    $_SESSION['user'] = $usersession['NAME'];
+    $_SESSION['user_id'] = $usersession['ID'];
+    header('location: ../view/home.php');
     exit();
 }
+
 $stmt = $con->prepare(" SELECT * FROM `PATIENTS`  WHERE (`EMAIL` = ? AND `PASSWORD` = ?)");
-$stmt->execute([$email,$password]);
-$usersession = $stmt ->fetchAll();
-if(sizeof($usersession)>0){
-    $user = $usersession[0];
-    $_SESSION['user'] = $user['NAME'];
-    $_SESSION['user_id'] = $user['ID'];
-    header('location: /');
+$stmt->execute([$email, $password]);
+$usersession = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if($usersession){
+    $_SESSION['user'] = $usersession['NAME'];
+    $_SESSION['user_id'] = $usersession['ID'];
+    header('location: ../view/home.php');
     exit();
 }
-header('location: ../view/loginForm.php?message=Usuário ou senha incorretos&validate=danger');
+
+header('location: ../view/loginForm.php?message=E-mail ou senha incorretos&validate=danger');
 
 ?>

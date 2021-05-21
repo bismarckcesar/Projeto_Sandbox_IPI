@@ -8,8 +8,8 @@ $date = $_POST['date'];
 $weight = floatval(trim(str_replace(',', '.', $_POST['weight'])));
 $height = floatval(trim(str_replace(',', '.', $_POST['height'])));
 $objective = $_POST['objective'];
-$password = trim(sha1($_POST['password']));
-$confirmPW = trim(sha1($_POST['confirmPW']));
+$password = sha1(trim($_POST['password']));
+$confirmPW = sha1(trim($_POST['password']));
 
 $stmt = $con->prepare("SELECT `EMAIL`, `CPF` FROM `NUTRITIONISTS` WHERE (`CPF`=? OR `EMAIL`=?)");
 $stmt->execute([$cpf, $email]);
