@@ -29,5 +29,25 @@ require_once '../actions/init.php';
  <a href="../actions/logout.php">Sair</a></div>
 <?php else: header("location: loginForm.php")?>
 <?php endif ?>
+
+
+<form action="../actions/search.php" method="POST">
+	<label>Pesquisar:<input type="text" name="search"></label>
+	<button>Pesquisar</button>
+</form>
+
+
+<form action="../actions/eatplanRegister.php" method="POST">
+	<label>Data de início:<input type="text" name="start" placeholder="Data de Início"></label>
+	<label>Data de Fim:<input type="text" name="finish" placeholder="Data de Fim"></label>
+	<label>Objetivo:<input type="text" name="objective" placeholder="Objetivo"></label>
+	<button>Criar Plano</button>
+</form>
+
+
+
+
+
+
 </body>
 </html>
