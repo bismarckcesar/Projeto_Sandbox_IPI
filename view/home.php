@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+	<link rel="shortcut icon" href="../public/img/fav-icon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,43 +12,53 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <title>Registro do nutricionista</title>
 
 </head>
 <?php
 
-require_once '../actions/init.php';
+require_once('../actions/init.php');
+require_once('../model/conect.php');
+
+if (!isset($_SESSION['user'])) {
+	header("location: loginForm.php");
+}
+
+$stmt = $con->prepare("SELECT * FROM MEALS");
+$stmt->execute();
+$meals = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <body>
-<?php if(isset($_SESSION['user'])): ?>
 
 <?= $_SESSION['user'] ?> 
- <a href="../actions/logout.php">Sair</a></div>
-<?php else: header("location: loginForm.php")?>
-<?php endif ?>
+ <a href="../actions/logout.php">Sair</a>
 
+<div id="form-eat-plan">
+	<h2>Registro do plano alimentar</h2>
+	<form action="../actions/eatplanRegister.php" id="eat-plan" method="POST">
+		<fieldset>
+		<legend>Dados do plano</legend>
+			<label>Data de início: <input type="date" name="initDate" placeholder="Data de Início" required></label>
+			<label>Data de Fim: <input type="date" name="finishDate" placeholder="Data de Fim" required></label>
+			<label>Objetivo: <input type="text" name="objective" placeholder="Objetivo"></label>
+		</fieldset>
+		<fieldset id="meals">
+		<legend>Refeições</legend>
+			<input name="mealName-1" id="meal-1" placeholder="Refeição" required="true">
+			<input name="mealWeight-1" id="weight-1" placeholder="Peso em gramas" required="true">
+			<input type="button" id="addmeal" value="+" onClick="addMeal()">
+			<input type="button" id="removemeal" value="-" onClick="removeMeal()">
+		</fieldset>
 
-<form action="../actions/search.php" method="POST">
-	<label>Pesquisar:<input type="text" name="search"></label>
-	<button>Pesquisar</button>
-</form>
-
-
-<form action="../actions/eatplanRegister.php" method="POST">
-	<label>Data de início:<input type="text" name="start" placeholder="Data de Início"></label>
-	<label>Data de Fim:<input type="text" name="finish" placeholder="Data de Fim"></label>
-	<label>Objetivo:<input type="text" name="objective" placeholder="Objetivo"></label>
-	<button>Criar Plano</button>
-</form>
-
-
-
-
-
+		<button>Criar Plano</button>
+	</form>
+	
+</div>	
 
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+<script src="../public/js/functions.js"></script>
+	
