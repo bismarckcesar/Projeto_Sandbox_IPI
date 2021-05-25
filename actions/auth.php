@@ -16,7 +16,7 @@ if($usersession){
 	    header('location: ../view/home.php');
 	    exit();
 	} else if ($usersession['EMAIL_VALIDATED'] == false) {
-		header('location: ../view/loginForm.php?message=Por favor, confirme seu cadastro.&validate=danger');
+		header('location: ../view/loginForm.php?message=Por favor, confirme seu cadastro!&validate=danger');
 		exit();
 	}
 }
@@ -32,11 +32,11 @@ if($usersession){
 	    header('location: ../view/home.php');
 	    exit();
 	} else if ($usersession['EMAIL_VALIDATED'] == false) {
-		header('location: ../view/loginForm.php?message=Por favor, confirme seu cadastro.&validate=danger');
+		header('location: ../view/loginForm.php?message=Por favor, confirme seu cadastro!&validate=danger');
 		exit();
 	}
 }
 
-header('location: ../view/loginForm.php?message=E-mail ou senha incorretos&validate=danger');
+header('location: ../view/loginForm.php?message=E-mail ou senha incorretos!&validate=danger');
 
 ?>

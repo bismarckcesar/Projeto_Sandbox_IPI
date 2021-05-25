@@ -24,26 +24,26 @@
 		<div class="container bg-white mt-4 mb-4 rounded div-form">
 
 			<!-- Default form subscription -->
-			<form class="text-center border border-light p-5" action="../actions/auth.php" method="POST">
+			<form class="border border-light p-5" action="../actions/auth.php" method="POST">
 
-			    <p class="h4 mb-4">Login</p>
+			    <p class="text-center h4 mb-4">Login</p>
 
 				<?php if(isset($_GET['message'])):?>
-					<div class="row w-auto mb-4 border border-<?php echo $_GET['validate']?> text-<?php echo $_GET['validate']?>">
-						<span class="text-center"><?php echo $_GET['message'] ?></span>
+					<div class="mb-4 border rounded border-<?php echo $_GET['validate']?> text-<?php echo $_GET['validate']?>">
+						<p class="text-center my-0 py-1"><span><?php echo $_GET['message'] ?></span></p>
 			 		</div>
 				<?php endif ?>
 
 			    <!-- Email -->
-			    <label for="email">E-mail</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="E-mail" required="true">
+			    <label for="email">E-mail:</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="Digite seu e-mail" required="true">
 
 			    <!-- Password -->
-			    <label for="password">Senha</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Senha" minlength=8 required="true">
+			    <label for="password">Senha:</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Digite sua senha" minlength=8 required="true">
 
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Entrar</button>
 
-				<p class="mt-3">Ainda não possui uma conta? Cadastre-se como <a class="link-style" href="nutriForm.php">nutricionista</a> ou <a class="link-style" href="patientForm.php">paciente</a>!</p>
+				<p class="text-center mt-3">Ainda não possui uma conta? Cadastre-se como <a class="link-style" href="nutriForm.php">nutricionista</a> ou <a class="link-style" href="patientForm.php">paciente</a>!</p>
 
 			</form>
 			<!-- Default form subscription -->

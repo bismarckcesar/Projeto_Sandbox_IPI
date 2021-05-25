@@ -10,7 +10,6 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 
-
 </head>
 
 <body class="back-img">
@@ -23,49 +22,49 @@
 		<div class="container bg-white mt-4 mb-4 rounded div-form">
 
 			<!-- Default form subscription -->
-			<form class="text-center border border-light p-5" action="../actions/patientRegister.php" method="POST">
+			<form class="border border-light p-5" action="../actions/patientRegister.php" method="POST">
 
-			    <p class="h4 mb-4">Crie sua conta</p>
+			    <p class="text-center h4 mb-4">Crie sua conta</p>
 
-			    <p>
+			    <p class="text-center">
 			    	Não é um paciente? Cadastre-se como <a class="link-style" href="nutriForm.php">nutricionista</a>!
 			    </p>
 				<?php if(isset($_GET['message'])):?>
-					<div class="row w-auto mb-4 border border-<?php echo $_GET['validate']?> text-<?php echo $_GET['validate']?>">
-						<span class="text-center"><?php echo $_GET['message'] ?></span>
+					<div class="mb-4 border rounded border-<?php echo $_GET['validate']?> text-<?php echo $_GET['validate']?>">
+						<p class="text-center my-0 py-1"><span><?php echo $_GET['message'] ?></span></p>
 			 		</div>
 				<?php endif ?>
 			    <!-- Name -->
-			    <label for="name">Nome</label><input type="text" id="name" name="name" class="form-control mb-4 input-style" placeholder="Nome" minlength=3 maxlength=45 required="true">
+			    <label for="name">Nome:</label><input type="text" id="name" name="name" class="form-control mb-4 input-style" placeholder="Digite seu nome" minlength=3 maxlength=45 required="true">
 
 			    <!-- Email -->
-			    <label for="email">E-mail</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="E-mail" required="true">
+			    <label for="email">E-mail:</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="Digite seu e-mail" required="true">
 
 			    <!-- CPF -->
-			    <label for="cpf">CPF</label><input type="text" id="cpf" name="cpf" class="form-control mb-4 input-style" placeholder="CPF" minlength=11 maxlength=11 required="true">
+			    <label for="cpf">CPF:</label><input type="text" id="cpf" name="cpf" class="form-control mb-4 input-style" placeholder="Digite o número do seu CPF" minlength=11 maxlength=11 required="true">
 
 				<!-- Date_birth-->
-				<label for="date">Data de nascimento</label><input type="date" id="date" name="date" class="form-control mb-4 input-style" required="true">
+				<label for="date">Data de nascimento:</label><input type="date" id="date" name="date" class="form-control mb-4 input-style" required="true">
 
 			    <!-- Weight -->
-			    <label for="weight">Peso</label><input type="text" id="weight" name="weight" class="form-control mb-4 input-style" placeholder="Peso" required="true">
+			    <label for="weight">Peso em quilogramas (kg):</label><input type="text" id="weight" name="weight" class="form-control mb-4 input-style" placeholder="Digite seu peso" required="true">
 
 				<!-- Height -->
-			    <label for="height">Altura</label><input type="text" id="height" name="height" class="form-control mb-4 input-style" placeholder="Altura" required="true">
+			    <label for="height">Altura em metros (m):</label><input type="text" id="height" name="height" class="form-control mb-4 input-style" placeholder="Digite sua altura" required="true">
 
 				<!-- Objective -->
-			    <label for="objective">Objetivo</label><input type="text" id="objective" name="objective" class="form-control mb-4 input-style" placeholder="Objetivo" required="true">
+			    <label for="objective">Qual o seu objetivo ao se cadastrar?</label><input type="text" id="objective" name="objective" class="form-control mb-4 input-style" placeholder="Exemplo: emagrecer" required="true">
 
 			    <!-- Password -->
-			    <label for="password">Senha</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Senha" required="true">
+			    <label for="password">Senha:</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Crie uma senha com no mínimo 8 caracteres" required="true">
 
 			    <!-- Confirm password -->
-			    <label for="confirmPW">Confirmar senha</label><input type="password" id="confirmPW" name="confirmPW" class="form-control mb-4 input-style" placeholder="Confirmar senha" minlength=8 required="true">
+			    <label for="confirmPW">Confirmar senha:</label><input type="password" id="confirmPW" name="confirmPW" class="form-control mb-4 input-style" placeholder="Confirme sua senha" minlength=8 required="true">
 
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Cadastrar</button>
 
-				<p class="mt-3">Já possui uma conta? Faça <a class="link-style" href="loginForm.php">Login</a>!</p>
+				<p class="text-center mt-3">Já possui uma conta? Faça <a class="link-style" href="loginForm.php">Login</a>!</p>
 
 			</form>
 			<!-- Default form subscription -->
