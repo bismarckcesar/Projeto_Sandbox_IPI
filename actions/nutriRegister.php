@@ -33,7 +33,7 @@ if ( $password != $confirmPW) {
 
 } else if ($result['REGISTER_NUMBER'] == $regNum ) {
 
-header('location: ../view/nutriForm.php?message=CRN inválida!&validate=danger');
+header('location: ../view/nutriForm.php?message=CRN já cadastrado!&validate=danger');
 exit();
 }
 
