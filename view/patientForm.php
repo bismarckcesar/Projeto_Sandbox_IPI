@@ -15,7 +15,7 @@
 <body class="back-img">
 	<main class="text-dark">
 
-		<h1 class="text-center mx-5 mt-5 header-style">Quer ser um paciente? Visualize os planos alimentares atribuídos a você, de forma simples na <a class="link-style" href="/">Sandbox</a>!</h1>
+		<h1 class="text-center mx-5 mt-5 header-style">Visualize os planos alimentares atribuídos a você, de forma rápida e simples na <a class="link-style" href="/">Sandbox</a>!</h1>
 
 		<img src="../public/img/icon.svg" class="rounded mx-auto d-block" alt="Icon for Sandbox System">
 
