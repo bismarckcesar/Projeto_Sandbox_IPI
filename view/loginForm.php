@@ -43,8 +43,7 @@
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Entrar</button>
 
-				<p class="mt-3">Ainda não possui uma conta? cadastre-se já!</p>
-				<p>Como <a class="link-style" href="nutriForm.php">nutricionista</a> ou um dos nossos <a class="link-style" href="patientForm.php">pacientes</a>!</p>
+				<p class="mt-3">Ainda não possui uma conta? Cadastre-se como <a class="link-style" href="nutriForm.php">nutricionista</a> ou <a class="link-style" href="patientForm.php">paciente</a>!</p>
 
 			</form>
 			<!-- Default form subscription -->
