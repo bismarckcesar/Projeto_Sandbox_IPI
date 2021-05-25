@@ -36,11 +36,22 @@ if ( $password != $confirmPW) {
 header('location: ../view/nutriForm.php?message=CRN inválida!&validate=danger');
 exit();
 }
-	
-$stmt = $con->prepare('INSERT INTO NUTRITIONISTS(CPF, NAME, REGISTER_NUMBER, EMAIL, PASSWORD) VALUES(?, ?, ?, ?, ?)');
-$stmt->execute([$cpf, $name, $regNum, $email, $password]);
 
-header('location: ../view/nutriForm.php?message=Nutricionista cadastrado com sucesso!&validate=success');
+$code = md5(time());
+	
+$stmt = $con->prepare('INSERT INTO NUTRITIONISTS(CPF, NAME, REGISTER_NUMBER, EMAIL, PASSWORD, VALIDATION_CODE) VALUES(?, ?, ?, ?, ?, ?)');
+$stmt->execute([$cpf, $name, $regNum, $email, $password, $code]);
+
+$stmt = $con->prepare(" SELECT * FROM `NUTRITIONISTS`  WHERE (`EMAIL` = ?)");
+$stmt->execute([$email]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$type = 'nutritionist';
+
+include 'send_email.php';
+
+header('location: register_status.php');
+
 exit();
 
- ?>
+?>

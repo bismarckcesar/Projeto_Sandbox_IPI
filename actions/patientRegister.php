@@ -35,11 +35,20 @@ header('location: ../view/patientForm.php?message=E-mail ou CPF já cadastrado!&
 exit();
 
 }
-	
-$stmt = $con->prepare('INSERT INTO PATIENTS(CPF, NAME, DATE_BIRTH, WEIGHT, HEIGHT, OBJECTIVE, PASSWORD, EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
-$stmt->execute([$cpf, $name, $date, $weight, $height, $objective, $password, $email]);
 
-header('location: ../view/patientForm.php?message=Paciente cadastrado com sucesso!&validate=success');
-exit();
+$code = md5(time());
 
- ?>
+$stmt = $con->prepare('INSERT INTO PATIENTS(CPF, NAME, DATE_BIRTH, WEIGHT, HEIGHT, OBJECTIVE, PASSWORD, EMAIL, VALIDATION_CODE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+$stmt->execute([$cpf, $name, $date, $weight, $height, $objective, $password, $email, $code]);
+
+$stmt = $con->prepare(" SELECT * FROM `PATIENTS` WHERE (`EMAIL` = ?)");
+$stmt->execute([$email]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$type = 'patient';
+
+include 'send_email.php';
+
+header('location: register_status.php');
+
+?>
