@@ -23,17 +23,25 @@
     $stmt->execute(['search' => "$search%"]);
 
 ?>
-    <?php while($patient = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-       <table>
-            <thead>
-                <th><?php echo $patient['NAME']?></th>
-            </thead>
-            <tr><td>CPF</td><td><?php echo $patient['CPF'] ?></td></tr>
-            <tr><td>Peso</td><td><?php echo $patient['WEIGHT'] ?></td></tr>
-            <tr><td>Altura</td><td><?php echo $patient['HEIGHT'] ?></td></tr>
-            <tr><td>Objetivo</td><td><?php echo $patient['OBJECTIVE'] ?></td></tr>
-       </table>
-    <?php endwhile?>
+<body>
+    <div class="container">
+         <?php while($patient = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+            <table class="table table-light table-striped table-hover w-50 p-3 m-auto mt-3">
+                <thead>
+                    <tr>
+                        <th scope="col"><?php echo $patient['NAME']?></th>
+                        <th class="text-end"><a href="">Criar plano alimentar</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr scope="row"><td>CPF</td><td class="text-start"><?php echo $patient['CPF'] ?></td></tr>
+                    <tr scope="row"><td>Peso</td><td class="text-start"><?php echo $patient['WEIGHT'] ?></td></tr>
+                    <tr scope="row"><td>Altura</td><td class="text-start"><?php echo $patient['HEIGHT'] ?></td></tr>
+                    <tr scope="row"><td>Objetivo</td><td class="text-start"><?php echo $patient['OBJECTIVE'] ?></td></tr>
+                </tbody>
+            </table>
+        <?php endwhile?>
+    </div>
 
 </body>
 </html>
