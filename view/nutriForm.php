@@ -38,22 +38,21 @@
 				<?php endif ?>
 
 			    <!-- Name -->
-			    <input type="text" name="name" class="form-control mb-4 input-style" placeholder="Nome" minlength=3 maxlength=45 required="true">
+			    <label for="name">Nome</label><input type="text" id="name" name="name" class="form-control mb-4 input-style" placeholder="Nome" minlength=3 maxlength=45 required="true">
 
 			    <!-- Email -->
-			    <input type="email" name="email" class="form-control mb-4 input-style" placeholder="E-mail" required="true">
+			    <label for="email">E-mail</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="E-mail" required="true">
 
 			    <!-- CPF -->
-			    <input type="text" name="cpf" class="form-control mb-4 input-style" placeholder="CPF" minlength=11 maxlength=11 required="true">
+			    <label for="cpf">CPF</label><input type="text" id="cpf" name="cpf" class="form-control mb-4 input-style" placeholder="CPF" minlength=11 maxlength=11 required="true">
 
 			    <!-- CRN -->
-			    <input type="text" name="regNum" class="form-control mb-4 input-style" placeholder="CRN" minlength=4 maxlength=4 required="true">
+			    <label for="regNum">CRN</label><input type="text" id="regNum" name="regNum" class="form-control mb-4 input-style" placeholder="CRN" minlength=4 maxlength=4 required="true">
 
 			    <!-- Password -->
-			    <input type="password" name="password" class="form-control mb-4 input-style" placeholder="Senha" minlength=8 required="true">
-
+			    <label for="password">Senha</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Senha" minlength=8 required="true">
 			    <!-- Confirm password -->
-			    <input type="password" name="confirmPW" class="form-control mb-4 input-style" placeholder="Confirmar senha" minlength=8 required="true">
+			    <label for="confirmPW">Confimar Senha</label><input type="password" id="confirmPW" name="confirmPW" class="form-control mb-4 input-style" placeholder="Confirmar senha" minlength=8 required="true">
 
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Cadastrar</button>

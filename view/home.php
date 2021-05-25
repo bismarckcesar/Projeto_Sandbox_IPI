@@ -24,15 +24,26 @@ if (!isset($_SESSION['user'])) {
 	header("location: loginForm.php");
 }
 
-$stmt = $con->prepare("SELECT * FROM MEALS");
-$stmt->execute();
-$meals = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt = $con->prepare("SELECT * FROM NUTRITIONISTS WHERE (`ID` = ? AND `NAME` = ?)");
+$stmt->execute([$_SESSION['user_id'], $_SESSION['user']]);
+$nutritionists = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$stmt = $con->prepare("SELECT * FROM PATIENTS WHERE (`ID` = ? AND `NAME` = ?)");
+$stmt->execute([$_SESSION['user_id'], $_SESSION['user']]);
+$patients = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <body>
 
-<?= $_SESSION['user'] ?> 
- <a href="../actions/logout.php">Sair</a>
+<nav id="menu">
+	<?= $_SESSION['user'] ?> 
+	<a href="../actions/logout.php">Sair</a>
+
+	<form action="../actions/search.php" method="POST">
+		<label>Pesquisar: <input type="text" name="search"></label>
+		<button>Pesquisar</button>
+	</form>
+</nav>
 
 <div id="form-eat-plan">
 	<h2>Registro do plano alimentar</h2>

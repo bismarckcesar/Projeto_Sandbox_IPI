@@ -36,31 +36,31 @@
 			 		</div>
 				<?php endif ?>
 			    <!-- Name -->
-			    <input type="text" name="name" class="form-control mb-4 input-style" placeholder="Nome" minlength=3 maxlength=45 required="true">
+			    <label for="name">Nome</label><input type="text" id="name" name="name" class="form-control mb-4 input-style" placeholder="Nome" minlength=3 maxlength=45 required="true">
 
 			    <!-- Email -->
-			    <input type="email" name="email" class="form-control mb-4 input-style" placeholder="E-mail" required="true">
+			    <label for="email">E-mail</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="E-mail" required="true">
 
 			    <!-- CPF -->
-			    <input type="text" name="cpf" class="form-control mb-4 input-style" placeholder="CPF" minlength=11 maxlength=11 required="true">
+			    <label for="cpf">CPF</label><input type="text" id="cpf" name="cpf" class="form-control mb-4 input-style" placeholder="CPF" minlength=11 maxlength=11 required="true">
 
 				<!-- Date_birth-->
-				<input type="date" name="date" class="form-control mb-4 input-style" required="true">
+				<label for="date">Data de nascimento</label><input type="date" id="date" name="date" class="form-control mb-4 input-style" required="true">
 
 			    <!-- Weight -->
-			    <input type="text" name="weight" class="form-control mb-4 input-style" placeholder="Peso" required="true">
+			    <label for="weight">Peso</label><input type="text" id="weight" name="weight" class="form-control mb-4 input-style" placeholder="Peso" required="true">
 
 				<!-- Height -->
-			    <input type="text" name="height" class="form-control mb-4 input-style" placeholder="Altura" required="true">
+			    <label for="height">Altura</label><input type="text" id="height" name="height" class="form-control mb-4 input-style" placeholder="Altura" required="true">
 
 				<!-- Objective -->
-			    <input type="text" name="objective" class="form-control mb-4 input-style" placeholder="Objetivo" required="true">
+			    <label for="objective">Objetivo</label><input type="text" id="objective" name="objective" class="form-control mb-4 input-style" placeholder="Objetivo" required="true">
 
 			    <!-- Password -->
-			    <input type="password" name="password" class="form-control mb-4 input-style" placeholder="Senha" required="true">
+			    <label for="password">Senha</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Senha" required="true">
 
 			    <!-- Confirm password -->
-			    <input type="password" name="confirmPW" class="form-control mb-4 input-style" placeholder="Confirmar senha" minlength=8 required="true">
+			    <label for="confirmPW">Confirmar senha</label><input type="password" id="confirmPW" name="confirmPW" class="form-control mb-4 input-style" placeholder="Confirmar senha" minlength=8 required="true">
 
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Cadastrar</button>

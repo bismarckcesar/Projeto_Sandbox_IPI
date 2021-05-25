@@ -37,9 +37,3 @@ function removeMeal() {
 function popupSearch() {
     varWindow = window.open('../../index.php', 'popup', "width=660, height=510, top=100, left=300, scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no");
 }
-
-//busca do usuário
-function search() {
-    str = document.getElementById('search').value;
-
-}

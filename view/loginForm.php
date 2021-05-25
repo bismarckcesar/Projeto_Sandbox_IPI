@@ -35,10 +35,10 @@
 				<?php endif ?>
 
 			    <!-- Email -->
-			    <input type="email" name="email" class="form-control mb-4 input-style" placeholder="E-mail" required="true">
+			    <label for="email">E-mail</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="E-mail" required="true">
 
 			    <!-- Password -->
-			    <input type="password" name="password" class="form-control mb-4 input-style" placeholder="Senha" minlength=8 required="true">
+			    <label for="password">Senha</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Senha" minlength=8 required="true">
 
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Entrar</button>
