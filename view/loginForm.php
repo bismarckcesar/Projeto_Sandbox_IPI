@@ -17,7 +17,7 @@
 <body class="back-img">
 	<main class="text-dark">
 
-		<h1 class="text-center mx-5 mt-5 header-style">Olá, seja bem-vindo ao sistema de planos alimentares <a class="link-style" href="/">Sandbox</a>!</h1>
+		<h1 class="text-center mx-5 mt-5 header-style">Olá, seja bem-vindo ao sistema de planos alimentares <a class="link-style" href="sandbox.php" target="_blank">Sandbox</a>!</h1>
 
 		<img src="../public/img/icon.svg" class="rounded mx-auto d-block" alt="Icon for Sandbox System">
 

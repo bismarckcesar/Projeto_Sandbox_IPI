@@ -15,7 +15,7 @@
 <body class="back-img">
 	<main class="text-dark">
 
-		<h1 class="text-center mx-5 mt-5 header-style">É nutricionista? Gerencie os planos alimentares de seus pacientes de maneira rápida e simples na <a class="link-style" href="/">Sandbox</a>!</h1>
+		<h1 class="text-center mx-5 mt-5 header-style">É nutricionista? Gerencie os planos alimentares de seus pacientes de maneira rápida e simples na <a class="link-style" href="sandbox.php" target="_blank">Sandbox</a>!</h1>
 
 		<img src="../public/img/icon.svg" class="rounded mx-auto d-block" alt="Icon for Sandbox System">
 
