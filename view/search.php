@@ -15,29 +15,40 @@
         <title>Registro do nutricionista</title>
 </head>
 <?php 
-    $search= $_POST['search'];
 
+    require_once('../actions/init.php');
     require('../model/conect.php');
+
+    if(!isset($_SESSION['user'])){
+        header('location: ../actions/logout.php');
+    }
+    
+    $search= $_POST['search'];
 
     $stmt= $con->prepare('SELECT * FROM PATIENTS WHERE CPF LIKE :search OR NAME LIKE :search');
     $stmt->execute(['search' => "$search%"]);
 
 ?>
 <body>
+
+    <nav>
+        <a href="home.php">Voltar</a>
+    </nav>
+
     <div class="container">
          <?php while($patient = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-            <table class="table table-light table-striped table-hover w-50 p-3 m-auto mt-3">
+            <table class="table table-light table-striped table-hover w-50 p-3 m-auto mb-4 border">
                 <thead>
-                    <tr>
+                    <tr class="border-bottom border-black">
                         <th scope="col"><?php echo $patient['NAME']?></th>
-                        <th class="text-end"><a href="">Criar plano alimentar</a></th>
+                        <th class="text-end"><a class="link-patient" href="eatPlan.php?patient=<?php echo $patient['ID']?>">Criar plano alimentar</a></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr scope="row"><td>CPF</td><td class="text-start"><?php echo $patient['CPF'] ?></td></tr>
-                    <tr scope="row"><td>Peso</td><td class="text-start"><?php echo $patient['WEIGHT'] ?></td></tr>
-                    <tr scope="row"><td>Altura</td><td class="text-start"><?php echo $patient['HEIGHT'] ?></td></tr>
-                    <tr scope="row"><td>Objetivo</td><td class="text-start"><?php echo $patient['OBJECTIVE'] ?></td></tr>
+                    <tr scope="row"><td class="w-50">CPF</td><td class="text-start"><?php echo $patient['CPF'] ?></td></tr>
+                    <tr scope="row"><td class="w-50">Peso</td><td class="text-start"><?php echo $patient['WEIGHT'] ?></td></tr>
+                    <tr scope="row"><td class="w-50">Altura</td><td class="text-start"><?php echo $patient['HEIGHT'] ?></td></tr>
+                    <tr scope="row"><td class="w-50">Objetivo</td><td class="text-start"><?php echo $patient['OBJECTIVE'] ?></td></tr>
                 </tbody>
             </table>
         <?php endwhile?>
