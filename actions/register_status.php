@@ -13,19 +13,16 @@
 
 </head>
 <body class= "back-img">
-	<?php 
-
-	require_once('../model/conect.php');
-
-	$user_id = $_GET['usr_id'];
-	$cad_cod = $_GET['code'];
-	$type = $_GET['type'];
-
-	?>
+	
+	<?php require_once('../model/conect.php'); ?>
 
 	<?php if (isset($_GET['usr_id']) & isset($_GET['code'])): ?>
 
 		<?php
+
+		$user_id = $_GET['usr_id'];
+		$cad_cod = $_GET['code'];
+		$type = $_GET['type'];
 
 		if ($type == 'nutritionist') {
 
