@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Confirmação de cadastro</title>
-</head>
-<body>
+	<title>Sandbox - confirmação de cadastro</title>
+	<link rel="shortcut icon" href="../public/img/fav-icon.ico" type="image/x-icon">
 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
+	<link href="../public/css/personalized.css" rel="stylesheet"/>
+
+</head>
+<body class= "back-img">
 	<?php 
 
 	require_once('../model/conect.php');
@@ -57,21 +64,29 @@
 			}
 
 			?>
-
-			<h1>Cadastro concluído com sucesso! Aguarde 3 segundos, você será redirecionado para a página de login...</h1>
+			<div class="div-registro pt-3 rounded bg-light text-center">
+				<img src="../public/img/icon.svg">
+				<h3 class="text-center text-dark">Cadastro concluído com sucesso! Aguarde 5 segundos, você será redirecionado para a página de login...</h3>
+				<img src="../public/img/email.png" class="img-envelope pb-3">
+			</div>
 			
-			<?php header('refresh:3; url = ../view/loginForm.php'); ?>
-
+			<?php header('refresh:5; url = ../view/loginForm.php'); ?>
 
 		<?php endif ?>
 
 	<?php else: ?>
 
-		<h1>Confirme seu cadastro através do link enviado por e-mail!</h1>
+	<div class="div-registro pt-3 rounded bg-light text-center">
+		<img src="../public/img/icon.svg">
+		<h3 class="text-center text-dark">Confirme seu cadastro através do link enviado por e-mail!</h3>
+		<img src="../public/img/email.png" class="img-envelope">
+		<p><a class="link-style" href="../index.php">Voltar para a página inicial</a></p>
+	</div>
 
-		<a href="../index.php">Voltar para a página inicial</a>
-	
 	<?php endif ?>
 
 </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>

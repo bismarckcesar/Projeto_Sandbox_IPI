@@ -26,3 +26,15 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.div-registro{
+    width: 40%;
+    height: 40%;
+    margin:auto;
+    margin-top:10%;
+    border: 5px solid #5986af;
+}
+.img-envelope{
+    width: 10%;
+    height: 10%;
+    margin:auto;
+}
