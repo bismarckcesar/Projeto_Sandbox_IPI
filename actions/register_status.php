@@ -64,7 +64,7 @@
 			}
 
 			?>
-			<div class="div-registro pt-3 rounded bg-light text-center">
+			<div class="container div-registro pt-3 rounded bg-light text-center">
 				<img src="../public/img/icon.svg">
 				<h3 class="text-center text-dark">Cadastro concluído com sucesso! Aguarde 5 segundos, você será redirecionado para a página de login...</h3>
 				<img src="../public/img/email.png" class="img-envelope pb-3">
@@ -76,7 +76,7 @@
 
 	<?php else: ?>
 
-	<div class="div-registro pt-3 rounded bg-light text-center">
+	<div class="container div-registro pt-3 rounded bg-light text-center">
 		<img src="../public/img/icon.svg">
 		<h3 class="text-center text-dark">Confirme seu cadastro através do link enviado por e-mail!</h3>
 		<img src="../public/img/email.png" class="img-envelope">
