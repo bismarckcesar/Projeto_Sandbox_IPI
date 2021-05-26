@@ -45,3 +45,8 @@
 .required_field{
     color: red;
 }
+.img-contact{
+    width: 15%;
+    height: 15%;
+    margin:auto;
+}
