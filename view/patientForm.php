@@ -35,31 +35,31 @@
 			 		</div>
 				<?php endif ?>
 			    <!-- Name -->
-			    <label for="name">Nome:</label><input type="text" id="name" name="name" class="form-control mb-4 input-style" placeholder="Digite seu nome" minlength=3 maxlength=45 required="true">
+			    <label for="name">Nome:<span class="required_field">*</span></label><input type="text" id="name" name="name" class="form-control mb-4 input-style" placeholder="Digite seu nome" minlength=3 maxlength=45 required="true">
 
 			    <!-- Email -->
-			    <label for="email">E-mail:</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="Digite seu e-mail" required="true">
+			    <label for="email">E-mail:<span class="required_field">*</span></label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="Digite seu e-mail" required="true">
 
 			    <!-- CPF -->
-			    <label for="cpf">CPF:</label><input type="text" id="cpf" name="cpf" class="form-control mb-4 input-style" placeholder="Digite o número do seu CPF" minlength=11 maxlength=11 required="true">
+			    <label for="cpf">CPF:<span class="required_field">*</span></label><input type="text" id="cpf" name="cpf" class="form-control mb-4 input-style" placeholder="Digite o número do seu CPF" minlength=11 maxlength=11 required="true">
 
 				<!-- Date_birth-->
-				<label for="date">Data de nascimento:</label><input type="date" id="date" name="date" class="form-control mb-4 input-style" required="true">
+				<label for="date">Data de nascimento:<span class="required_field">*</span></label><input type="date" id="date" name="date" class="form-control mb-4 input-style" required="true">
 
 			    <!-- Weight -->
-			    <label for="weight">Peso em quilogramas (kg):</label><input type="text" id="weight" name="weight" class="form-control mb-4 input-style" placeholder="Digite seu peso" required="true">
+			    <label for="weight">Peso em quilogramas (kg):<span class="required_field">*</span></label><input type="text" id="weight" name="weight" class="form-control mb-4 input-style" placeholder="Digite seu peso" required="true">
 
 				<!-- Height -->
-			    <label for="height">Altura em metros (m):</label><input type="text" id="height" name="height" class="form-control mb-4 input-style" placeholder="Digite sua altura" required="true">
+			    <label for="height">Altura em metros (m):<span class="required_field">*</span></label><input type="text" id="height" name="height" class="form-control mb-4 input-style" placeholder="Digite sua altura" required="true">
 
 				<!-- Objective -->
-			    <label for="objective">Qual o seu objetivo ao se cadastrar?</label><input type="text" id="objective" name="objective" class="form-control mb-4 input-style" placeholder="Exemplo: emagrecer" required="true">
+			    <label for="objective">Qual o seu objetivo ao se cadastrar?<span class="required_field">*</span></label><input type="text" id="objective" name="objective" class="form-control mb-4 input-style" placeholder="Exemplo: emagrecer" required="true">
 
 			    <!-- Password -->
-			    <label for="password">Senha:</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Crie uma senha com no mínimo 8 caracteres" required="true">
+			    <label for="password">Senha:<span class="required_field">*</span></label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Crie uma senha com no mínimo 8 caracteres" required="true">
 
 			    <!-- Confirm password -->
-			    <label for="confirmPW">Confirmar senha:</label><input type="password" id="confirmPW" name="confirmPW" class="form-control mb-4 input-style" placeholder="Confirme sua senha" minlength=8 required="true">
+			    <label for="confirmPW">Confirmar senha:<span class="required_field">*</span></label><input type="password" id="confirmPW" name="confirmPW" class="form-control mb-4 input-style" placeholder="Confirme sua senha" minlength=8 required="true">
 
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Cadastrar</button>

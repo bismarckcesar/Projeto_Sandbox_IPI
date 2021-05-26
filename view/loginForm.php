@@ -11,6 +11,7 @@
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 
 
+
 </head>
 
 
@@ -35,10 +36,10 @@
 				<?php endif ?>
 
 			    <!-- Email -->
-			    <label for="email">E-mail:</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="Digite seu e-mail" required="true">
+			    <label for="email">E-mail:<span class="required_field">*</span></label><input type="email" id="email" name="email" class="form-control mb-4 input-style required_field" placeholder="Digite seu e-mail" required="true">
 
 			    <!-- Password -->
-			    <label for="password">Senha:</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Digite sua senha" minlength=8 required="true">
+			    <label for="password">Senha:<span class="required_field">*</span></label><input type="password" id="password" name="password" class="form-control mb-4 input-style required_field" placeholder="Digite sua senha" minlength=8 required="true">
 
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Entrar</button>
