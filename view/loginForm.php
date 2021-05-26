@@ -14,13 +14,14 @@
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 
 
+
 </head>
 
 
 <body class="back-img">
 	<main class="text-dark">
 
-		<h1 class="text-center mx-5 mt-5 header-style">Olá, seja bem-vindo ao sistema de planos alimentares <a class="link-style" href="/">Sandbox</a>!</h1>
+		<h1 class="text-center mx-5 mt-5 header-style">Olá, seja bem-vindo ao sistema de planos alimentares <a class="link-style" href="sandbox.php" target="_blank">Sandbox</a>!</h1>
 
 		<img src="../public/img/icon.svg" class="rounded mx-auto d-block" alt="Icon for Sandbox System">
 
@@ -38,10 +39,10 @@
 				<?php endif ?>
 
 			    <!-- Email -->
-			    <label for="email">E-mail:</label><input type="email" id="email" name="email" class="form-control mb-4 input-style" placeholder="Digite seu e-mail" required="true">
+			    <label for="email">E-mail:<span class="required_field">*</span></label><input type="email" id="email" name="email" class="form-control mb-4 input-style required_field" placeholder="Digite seu e-mail" required="true">
 
 			    <!-- Password -->
-			    <label for="password">Senha:</label><input type="password" id="password" name="password" class="form-control mb-4 input-style" placeholder="Digite sua senha" minlength=8 required="true">
+			    <label for="password">Senha:<span class="required_field">*</span></label><input type="password" id="password" name="password" class="form-control mb-4 input-style required_field" placeholder="Digite sua senha" minlength=8 required="true">
 
 			    <!-- Sign in button -->
 			    <button class="btn btn-info btn-block btn-style" type="submit">Entrar</button>
