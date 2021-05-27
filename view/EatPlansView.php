@@ -16,8 +16,8 @@
 			<tr scope="row" class="border-bottom border-black">
 				<th scope="col">Nutricionista: <?php echo $eating_plans['NAME'] ?></th>
 				<th scope="col">Paciente: <?php echo $patient['NAME'] ?></th>
-				<th scope="col"><a class="link-patient" style="cursor: pointer">Editar</a></th>
-				<th scope="col"><a class="link-patient" style="cursor: pointer">Refeições</a></th>
+				<th scope="col"><a class="link-custom" style="cursor: pointer">Editar</a></th>
+				<th scope="col"><a class="link-custom" style="cursor: pointer">Refeições</a></th>
 			</tr>
 		</thead>
 		<tbody>

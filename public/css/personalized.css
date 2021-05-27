@@ -1,55 +1,54 @@
-.btn-style {
-    background-color: #5986af;
-    border: 1px solid black;
-}
-.input-style{
-    border: 1px solid #5986af;
-}
-.link-style{
-    color: #5986af;
-    text-decoration:underline;
-}
-.link-patient{
-    color: #5986af;
-}
-.div-form{
-    width: 40%;
-    height: 40%;
-    border: 5px solid #5986af;
-}
-.header-style{
-    font-size: 30px;
-}
-.back-img{
+.bg-img{
     background-image: url(../img/background.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-.div-registro{
+.bg-color-custom, .btn-custom{
+    background-color: #5986af;
+}
+.btn-custom{
+    border: 1px solid black;
+}
+.link-custom{
+    color: #5986af;
+    text-decoration:underline;
+} 
+.border-custom{
+    border: 1px solid #5986af;
+}
+.div-custom{
     width: 40%;
     height: 40%;
-    margin:auto;
-    margin-top:10%;
     border: 5px solid #5986af;
+    margin:auto;
+}
+.h-custom{
+    font-size: 30px;
+}
+.img-envelope, .img-contact{
+    margin:auto;
 }
 .img-envelope{
     width: 10%;
     height: 10%;
-    margin:auto;
-}
-.div-sobre{
-    width: 40%;
-    height: 40%;
-    margin:auto;
-    margin-top:2%;
-    border: 5px solid #5986af;
-}
-.required_field{
-    color: red;
 }
 .img-contact{
-    width: 15%;
-    height: 15%;
-    margin:auto;
+    width: 80px;
+    height: 75px;
+}
+.icon-custom{
+    width: 90px;
+    height: 90px;
+}
+.h-icon-custom{
+    width: 45px;
+    height: 45px;
+}
+.required-field:after{
+    content: ' *';
+    color: red;
+}
+.vh-max{
+    height: 100vh;
 }

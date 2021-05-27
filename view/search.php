@@ -41,7 +41,7 @@
                 <thead>
                     <tr class="border-bottom border-black">
                         <th scope="col"><?php echo $patient['NAME']?></th>
-                        <th class="text-end"><a class="link-patient" href="eatPlanForm.php?patient=<?php echo $patient['ID']?>">Criar plano alimentar</a></th>
+                        <th class="text-end"><a class="link-custom" href="eatPlanForm.php?patient=<?php echo $patient['ID']?>">Criar plano alimentar</a></th>
                     </tr>
                 </thead>
                 <tbody>

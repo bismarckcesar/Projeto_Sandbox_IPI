@@ -10,14 +10,14 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 </head>
-<body class= "back-img">		
+<body class= "bg-img">		
 	<main>
-	<div class="container div-sobre pt-3 rounded bg-light text-dark">
+	<div class="container div-custom pt-3 rounded bg-light text-dark mt-5">
 		<div class="text-center ">
-			<img src="../public/img/icon.svg">
+			<img src="../public/img/icon.png" class="icon-custom">
 		</div>
 		<div class="mx-2">
-			<h3 class="text-center text-dark">Sobre a Sandbox: </h3>
+			<h4 class="text-center text-dark pt-2">Sobre a Sandbox: </h4>
 			<p class="text-justify text-dark">Projeto desenvolvido pela empresa <strong>!VaiDarCerto</strong>. Seu objetivo é auxiliar nutricionistas e pacientes. Os nutricionistas podem cadastrar planos alimentares de maneira simples e rápida. Já os pacientes têm a possibilidade de acessarem suas dietas.</p>
 		<h5 class="text-center">Missão</h5>
 			<p>Auxiliar no gerenciamento e acesso de planos alimentares.</p>
@@ -29,7 +29,7 @@
 			<li><strong>Integridade</strong>: agir de acordo com as leis e normas aplicáveis.</li>
 			<li><strong>Solidariedade</strong>: ter empatia pelo próximo. </li>
 		</ul>
-		<p class="text-center"><a class="link-style" href="../index.php">Voltar para a página inicial</a></p>
+		<p class="text-center mt-n1"><a class="link-custom" href="../index.php">Voltar para a página inicial</a></p>
 		</div>
 	</div>
 	</main>

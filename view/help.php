@@ -10,15 +10,15 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 </head>
-<body class="back-img">
+<body class="bg-img">
 	<main>
-		<div class="container div-registro pt-3 rounded bg-light text-center">
-			<img src="../public/img/icon.svg">
-			<h5 class="text-center text-dark">Converse conosco através do e-mail:</h5>
-			<p>sandbox.pep2.2021@gmail.com</p>
-			<img src="../public/img/contact.png" class="img-contact">
-			<p><a class="link-style" href="../index.php">Voltar para a página inicial</a></p>
+		<div class="container div-custom pt-3 rounded bg-light text-center mt-5">
+			<img src="../public/img/icon.png" class="icon-custom">
+			<h4 class="text-center text-dark pt-2">Converse conosco através do e-mail:</h4>
+			<p class="text-break">sandbox.pep2.2021@gmail.com</p>
+			<img src="../public/img/contact.png" class="img-contact pb-3">
+			<p><a class="link-custom" href="../index.php">Voltar para a página inicial</a></p>
 		</div>
 	</main>
 </body>
-</html>
+</html> 

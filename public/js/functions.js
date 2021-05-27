@@ -7,7 +7,7 @@ function addMeal() {
     let meal = document.createElement('input');
     meal.name = "mealName-" + id;
     meal.setAttribute('id', 'meal-' + id);
-    meal.setAttribute('class', 'form-control mb-4 input-style');
+    meal.setAttribute('class', 'form-control mb-4 border-custom');
     meal.placeholder = "Refeição";
     meal.setAttribute('required', 'true');
     meal.style['min-width'] = '408px';
@@ -20,7 +20,7 @@ function addMeal() {
     let weight = document.createElement('input');
     weight.name = "mealWeight-" + id;
     weight.setAttribute('id', 'weight-' + id);
-    weight.setAttribute('class', 'form-control mb-4 input-style');
+    weight.setAttribute('class', 'form-control mb-4 border-custom');
     weight.placeholder = "Peso em gramas";
     weight.setAttribute('required', 'true');
     weight.style['min-width'] = '408px';

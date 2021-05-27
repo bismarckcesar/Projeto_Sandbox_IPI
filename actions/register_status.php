@@ -12,7 +12,7 @@
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 
 </head>
-<body class= "back-img">
+<body class= "bg-img">
 	
 	<?php require_once('../model/conect.php'); ?>
 
@@ -61,8 +61,8 @@
 			}
 
 			?>
-			<div class="container div-registro pt-3 rounded bg-light text-center">
-				<img src="../public/img/icon.svg">
+			<div class="container div-custom pt-3 rounded bg-light text-center mt-5">
+				<img src="../public/img/icon.png" class="icon-custom mb-2">
 				<h3 class="text-center text-dark">Cadastro concluído com sucesso! Aguarde 5 segundos, você será redirecionado para a página de login...</h3>
 				<img src="../public/img/email.png" class="img-envelope pb-3">
 			</div>
@@ -73,11 +73,11 @@
 
 	<?php else: ?>
 
-	<div class="container div-registro pt-3 rounded bg-light text-center">
-		<img src="../public/img/icon.svg">
+	<div class="container div-custom pt-3 rounded bg-light text-center mt-5">
+		<img src="../public/img/icon.png" class="icon-custom mb-2">
 		<h3 class="text-center text-dark">Confirme seu cadastro através do link enviado por e-mail!</h3>
 		<img src="../public/img/email.png" class="img-envelope">
-		<p><a class="link-style" href="../index.php">Voltar para a página inicial</a></p>
+		<p><a class="link-custom" href="../index.php">Voltar para a página inicial</a></p>
 	</div>
 
 	<?php endif ?>
