@@ -36,54 +36,31 @@ $patients = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<div class="container">
-    <a class="navbar-brand" href="#">Nutritionist System</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="#">Nutritionist System</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+		<form action="../view/search.php" method="POST" class="input-group form-outline w-100">
+			<label class="border"><input type="text" name="search" class="form-control w-100"></label>
+			<button class="btn btn-primary"><i class="fas fa-search"></i></button>
+		</form>
 
-<form action="../view/search.php" method="POST" class="input-group form-outline w-100">
-<label class="border"><input type="text" name="search" class="form-control w-100"></label>
-<button class="btn btn-primary"><i class="fas fa-search"></i></button>
-</form>
-
-
-
-<div class="btn-group">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-  <?= $_SESSION['user'] ?> 
-  
-  </button>
-  
-  <ul class="dropdown-menu">
-    
-    <li><a class="dropdown-item" href="../actions/logout.php">Sair</a></li>
-  </ul>
-  </div>
-
-</nav>
-
-<nav id="menu">
-	<?= $_SESSION['user'] ?> 
-	<a class="dropdown-item" href="../actions/logout.php">Sair</a>
-
-	<?php if( $nutritionists != false ):?>
-	<form action="../view/search.php" method="POST">
-		
-	</form>
-	<?php endif ?>
-</nav>
-
-<?php if( $patients != false ):?>
-		
-		<?php include 'patientEatPlans.php';?>
-		
-<?php endif ?>
-
-
-
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				<?= $_SESSION['user'] ?> 
+			</button>
+	
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="../actions/logout.php">Sair</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container" id="eat-plans">			
+		<?php include 'EatPlansView.php';?>
+	</div>
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
