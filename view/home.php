@@ -12,7 +12,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 
-    <title>Registro do nutricionista</title>
+    <title>Sandbox</title>
 
 </head>
 <?php
@@ -24,6 +24,7 @@ if (!isset($_SESSION['user'])) {
 	header("location: loginForm.php");
 }
 
+
 $stmt = $con->prepare("SELECT * FROM NUTRITIONISTS WHERE (`ID` = ? AND `NAME` = ?)");
 $stmt->execute([$_SESSION['user_id'], $_SESSION['user']]);
 $nutritionists = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -32,6 +33,7 @@ $stmt = $con->prepare("SELECT * FROM PATIENTS WHERE (`ID` = ? AND `NAME` = ?)");
 $stmt->execute([$_SESSION['user_id'], $_SESSION['user']]);
 $patients = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
 ?>
 <body>
 
@@ -39,13 +41,21 @@ $patients = $stmt->fetch(PDO::FETCH_ASSOC);
 	<?= $_SESSION['user'] ?> 
 	<a href="../actions/logout.php">Sair</a>
 
+	<?php if( $nutritionists != false ):?>
 	<form action="../view/search.php" method="POST">
 		<label>Pesquisar: <input type="text" name="search"></label>
 		<button>Pesquisar</button>
 	</form>
+	<?php endif ?>
 </nav>
-	
-</div>	
+
+<?php if( $patients != false ):?>
+		
+		<?php include 'patientEatPlans.php';?>
+		
+<?php endif ?>
+
+
 
 </body>
 </html>
