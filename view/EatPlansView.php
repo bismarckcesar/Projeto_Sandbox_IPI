@@ -1,50 +1,57 @@
 <?php
 
-	if(isset($nutritionists)){
-		$stmt = $con->prepare("SELECT * FROM EATING_PLANS WHERE NUTRITIONIST_ID = ? ORDER BY DATE_START");
-		$stmt->execute([$_SESSION['user_id']]);		
-	}else {		
-		$stmt = $con->prepare("SELECT * FROM EATING_PLANS WHERE PATIENT	_ID = ? ORDER BY DATE_START");
-		$stmt->execute([$_SESSION['user_id']]);
-	}
+if(isset($nutritionists)){
+	$stmt = $con->prepare("SELECT * FROM EATING_PLANS WHERE NUTRITIONIST_ID = ? ORDER BY DATE_START");
+	$stmt->execute([$_SESSION['user_id']]);		
+}else {		
+	$stmt = $con->prepare("SELECT * FROM EATING_PLANS WHERE PATIENT	_ID = ? ORDER BY DATE_START");
+	$stmt->execute([$_SESSION['user_id']]);
+}
+
 ?>
 
-<h2 class="mb-5"> Planos Alimentares </h2>
+<h2 class="mb-5 text-center"> Planos Alimentares </h2>
 
 <!-- Start of the eating_plans while -->
 <?php while($eating_plans = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
 
-	<?php
-		if(isset($nutritionists)){
-			$stmt1= $con->prepare('SELECT * FROM PATIENTS WHERE ID = ?');
-			$stmt1->execute([$eating_plans['PATIENT_ID']]);
-			$patient = $stmt1->fetch(PDO::FETCH_ASSOC);	
-		} else{
-			$stmt1= $con->prepare('SELECT * FROM NUTRITIONISTS WHERE ID = ?');
-			$stmt1->execute([$eating_plans['NUTRITIONIST_ID']]);
-			$nutritionist = $stmt1->fetch(PDO::FETCH_ASSOC);			
-		}
-	?>
+<?php
+	if(isset($nutritionists)){
+		$stmt1= $con->prepare('SELECT * FROM PATIENTS WHERE ID = ?');
+		$stmt1->execute([$eating_plans['PATIENT_ID']]);
+		$patient = $stmt1->fetch(PDO::FETCH_ASSOC);	
+	} else{
+		$stmt1= $con->prepare('SELECT * FROM NUTRITIONISTS WHERE ID = ?');
+		$stmt1->execute([$eating_plans['NUTRITIONIST_ID']]);
+		$nutritionist = $stmt1->fetch(PDO::FETCH_ASSOC);			
+	}
+?>
 
 <table class="table table-light table-striped table-hover w-50 p-3 m-auto mb-4 border">
-	<thead>
+	<tbody>
 		<tr scope="row" class="border-bottom border-black">
-			<th scope="col">Nutricionista: <?= $nutritionist['NAME'] ?? $_SESSION['user']?></th>
-			<th scope="col">Paciente: <?= $patient['NAME'] ?? $_SESSION['user']?></th>
-			<th scope="col"><a class="link-patient text-decoration-none" data-bs-toggle="modal" data-bs-target="#meals-<?=$eating_plans['ID']?>" style="cursor: pointer">Refeições</a></th>
-
-			<?php if(isset($nutritionists) && empty($patients)): ?>
-				<th scope="col">
-				<a class="link-patient text-decoration-none" data-bs-toggle="modal" data-bs-target="#eatPlans-<?=$eating_plans['ID']?>" style="cursor: pointer">Editar</a>
-			<?php endif ?>
-
+			<th scope="col">Nutricionista:
+				<td><?= $nutritionist['NAME'] ?? $_SESSION['user']?>
 			</th>
 		</tr>
-	</thead>
-	<tbody>
-	<tr scope="row"><td>Data de início</td><td class="text-center" colspan="3"><?=$eating_plans['DATE_START']?></td></tr>
-	<tr scope="row"><td>Data de Termino</td><td class="text-center" colspan="3"><?=$eating_plans['DATE_FINISH']?></td></tr>
-	<tr scope="row"><td>Objetivo</td><td class="text-center" colspan="3"><?=$eating_plans['OBJECTIVE']?></td></tr>
+		<tr>
+			<th scope="col">Paciente:
+				<td><?= $patient['NAME'] ?? $_SESSION['user']?></td>
+			</th>
+		</tr>
+		<tr scope="row"><td>Data de início:</td><td class="text-start" colspan="3"><?=$eating_plans['DATE_START']?></td></tr>
+		<tr scope="row"><td>Data de Término:</td><td class="text-start" colspan="3"><?=$eating_plans['DATE_FINISH']?></td></tr>
+		<tr scope="row"><td>Objetivo:</td><td class="text-start" colspan="3"><?=$eating_plans['OBJECTIVE']?></td></tr>
+		
+		<th scope="col"><p class="text-center my-0"><a class="link-patient text-decoration-none" data-bs-toggle="modal" data-bs-target="#meals-<?=$eating_plans['ID']?>" style="cursor: pointer">Refeições</a></p></th>
+
+		<?php if(isset($nutritionists) && empty($patients)): ?>
+			<th scope="col">
+			<p class="text-center my-0">
+			<a class="link-patient text-decoration-none" data-bs-toggle="modal" data-bs-target="#eatPlans-<?=$eating_plans['ID']?>" style="cursor: pointer">Editar</a></p>
+		<?php endif ?>
+
+		</th>
 	</tbody>	
 </table>
 

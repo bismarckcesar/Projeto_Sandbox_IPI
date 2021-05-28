@@ -29,5 +29,5 @@ for ($i = 1; $i <= sizeof($mealw); $i++) {
     $stmt->execute([$meal['mealName-'.$i],floatval(trim(str_replace(',', '.', $mealw['mealWeight-'.$i]))),$idplan]); 
 }
 
-header('location: ../view/search.php?message=Plano alimentar cadastrado com suscesso!&validate=success');
+header('location: ../view/home.php?message=Plano alimentar cadastrado com suscesso!&validate=success');
 ?>

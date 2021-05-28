@@ -25,11 +25,11 @@ $patients = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Sandbox - seja bem-vindo!</title>
     
 
-</head>
 	<?php include 'header.php'; ?>
+</head>
 
 <body>
-	<main class="vh-max">
+	<main class="vh-min">
 		<div class="container" id="eat-plans" style="margin-top: 100px;">
 
 			<?php include 'EatPlansView.php'; ?>

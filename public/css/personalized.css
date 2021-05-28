@@ -49,6 +49,6 @@
     content: ' *';
     color: red;
 }
-.vh-max{
-    height: 100vh;
+.vh-min{
+    min-height: 100vh;
 }

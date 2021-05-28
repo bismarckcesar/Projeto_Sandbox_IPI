@@ -11,7 +11,7 @@
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 </head>
 <body class="bg-img">
-	<main>
+	<main class="vh-min">
 		<div class="container div-custom pt-3 rounded bg-light text-center mt-5">
 			<img src="../public/img/icon.png" class="icon-custom">
 			<h4 class="text-center text-dark pt-2">Converse conosco através do e-mail:</h4>

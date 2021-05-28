@@ -11,7 +11,7 @@
 	<link href="../public/css/personalized.css" rel="stylesheet"/>
 </head>
 <body class= "bg-img">		
-	<main>
+	<main class="vh-min">
 	<div class="container div-custom pt-3 rounded bg-light text-dark mt-5">
 		<div class="text-center ">
 			<img src="../public/img/icon.png" class="icon-custom">
