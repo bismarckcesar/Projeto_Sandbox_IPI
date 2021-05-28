@@ -1,11 +1,9 @@
 <?php 
 
-// if (!isset($_SESSION['user'])) {
-// 	header('location: view/loginForm.php');
-// }
+if (!isset($_SESSION['user'])) {
+ 	header('location: view/loginForm.php');
+}
 
-// header('location: view/home.php');
-
-var_dump($_POST);
+header('location: view/home.php');
 
 ?>
