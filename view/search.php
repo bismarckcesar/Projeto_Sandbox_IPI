@@ -24,7 +24,8 @@
     }
     
     $search= $_POST['search'];
-
+    // var_dump($_POST);
+    // exit();
     $stmt= $con->prepare('SELECT * FROM PATIENTS WHERE CPF LIKE :search OR NAME LIKE :search');
     $stmt->execute(['search' => "$search%"]);
 

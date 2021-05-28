@@ -1,4 +1,5 @@
 <?php
+
 	if(isset($nutritionists)){
 		$stmt = $con->prepare("SELECT * FROM EATING_PLANS WHERE NUTRITIONIST_ID = ? ORDER BY DATE_START");
 		$stmt->execute([$_SESSION['user_id']]);		
@@ -69,6 +70,7 @@
 
 				</div>
 				<div class="modal-footer">
+				<a href="../actions/deletePlans.php?id=<?=$eat_id?>" class="text-danger text-decoration-none" style="cursor: pointer">Excluir</a>
 					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
 					<button type="button" class="btn btn-primary">Salvar</button>
 				</div>
@@ -170,6 +172,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
 				</div>
+				
 			</div>
 		</div>
 	</div>

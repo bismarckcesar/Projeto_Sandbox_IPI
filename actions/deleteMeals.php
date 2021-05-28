@@ -3,9 +3,9 @@ require_once('../model/conect.php');
 require_once('init.php');
 
 if(!isset($_SESSION['user'])){
- header('location: ../view/login.php');
- exit();
-}
+    header('location: ../view/login.php');
+    exit();
+   }
 
 $id = $_GET['id'];
 $user = $_SESSION['user_id'];

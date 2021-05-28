@@ -2,7 +2,7 @@
 require 'init.php';
 require ('../model/conect.php');
 
-$idplan = $_POST['plan_id';]
+$idplan = $_POST['plan_id'];
 
 $mealw = array_filter($_POST, function($meals){          
         $a = strpbrk($meals,'W');

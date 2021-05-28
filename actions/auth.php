@@ -13,6 +13,7 @@ if($usersession){
 	if ($usersession['EMAIL_VALIDATED'] == true) {
 	    $_SESSION['user'] = $usersession['NAME'];
 	    $_SESSION['user_id'] = $usersession['ID'];
+		$_SESSION['role'] = 1;
 	    header('location: ../view/home.php');
 	    exit();
 	} else if ($usersession['EMAIL_VALIDATED'] == false) {
@@ -29,6 +30,7 @@ if($usersession){
 	if ($usersession['EMAIL_VALIDATED'] == true) {
 	    $_SESSION['user'] = $usersession['NAME'];
 	    $_SESSION['user_id'] = $usersession['ID'];
+		$_SESSION['role'] = 2;
 	    header('location: ../view/home.php');
 	    exit();
 	} else if ($usersession['EMAIL_VALIDATED'] == false) {
