@@ -24,9 +24,9 @@ $patients = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>Sandbox - seja bem-vindo!</title>
     
-	<?php include 'header.php'; ?>
 
 </head>
+	<?php include 'header.php'; ?>
 
 <body>
 	<main class="vh-max">

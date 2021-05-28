@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-color-custom">
   <div class="container-fluid">
     <div class="">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="home.php">
       <img class="h-icon-custom mx-0 mt-n2" src="../public/img/icon.png">
     </a>
     </div>
