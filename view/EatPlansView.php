@@ -97,7 +97,7 @@
 							<tr scope="row" class="border-bottom border-black">
 								<?php if(isset($nutritionists)): ?>
 								<th scope="col">
-									<a class="text-danger text-decoration-none" style="cursor: pointer">Excluir</a>
+									<a href="../actions/deleteMeals.php?id=<?=$id?>" class="text-danger text-decoration-none" style="cursor: pointer">Excluir</a>
 								</th>
 								<?php else: ?>
 									<th  colspan="1" class="text-start"><a class="text-primary text-decoration-none" style="cursor: pointer">Visualização</a></th>
